@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta lang="pt-br">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fabricante | Controle de Extintor</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+  <main>
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">🧯Controle de Extintor</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/fabricante">Fabricantes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/extintor">Extintores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Vistoria</a>
+            </li>
+          </ul>
+          <span class="navbar-text">
+
+          </span>
+        </div>
+      </div>
+    </nav>
+
+    <form class="container"id="formulario-vistoria" method="post" action="/vistoria/store">
+      <div class="mb-4">
+        <h2>{{titulo}}</h2>
+        <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3 mb-2">
+          A vistoria esta disponivel, somente para o mês atual, não podendo ser feita alterações referentes as vistorias
+          realizadas aos meses passados.
+        </div>
+      </div>
+
+      <ul class="list-group mt-2">
+        {{#each extintoresNaoChecados}}
+        <li class="list-group-item">
+          <input name="ex" class="form-check-input me-1" type="checkbox" value="{{idExtintor}}" id="firstCheckboxStretched{{idExtintor}}">
+          <label class="form-check-label stretched-link" for="firstCheckboxStretched{{idExtintor}}">N° {{numeroDeSerie}}</label>
+        </li>
+        {{/each}}
+
+        {{#each extintoresChecados}}
+        <li class="list-group-item">
+          <input checked disabled class="form-check-input me-1" type="checkbox" id="firstCheckboxStretched">
+          <label class="form-check-label stretched-link" for="firstCheckboxStretched">N° {{numeroDeSerie}}</label>
+        </li>
+        {{/each}}
+      </ul>
+
+      <!--  -->
+      <div class="alert alert-warning mt-3" role="alert">
+        <h4 class="alert-heading">
+          <i class="bi bi-exclamation-triangle-fill"></i>
+          Atenção
+        </h4>
+        <p>
+          Caso seja constatado alguma irregularidade, durante a inspeção não ticar o mesmo e enacaminha-lo para uma
+          empresa autorizada para reparos. <br>
+        <ul>
+          <li>Manometro apontando a pressão no vermelho (despressurizado ou sobrepressurizado).</li>
+          <li>Amassamento ou componentes quebrados</li>
+          <li>Qualquer outro motivo, que impossibilite o uso seguro do extintor</li>
+        </ul>
+        </p>
+        <hr>
+        <p class="mb-0">
+          <input id="checkbox-confirma" class="form-check-input border-primary me-1" type="checkbox" name="confirma" value="1">
+          <label class="" for="">confirma, que foi realizado uma vistoria em todos os extintores acima ticados com um
+            "check"</label>
+        </p>
+      </div>
+
+      <button type="submit" class="btn btn-primary d-flex align-items-center" style=" gap: 10px;">
+        <i style="font-size: 22px;" class="bi bi-clipboard2-check-fill"></i>
+        Finalizar vistoria
+      </button>
+    </form>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+    <script src="/js/vistoria.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta lang="pt-br">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adicionar Extintor | Controle de Extintor</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+  <main>
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Adicionar novo extintor</a>
+
+      </div>
+    </nav>
+
+    <section class="container ">
+      <form method="post" name="formulario-extintor" action="/extintor/store">
+        <div class="mb-3">
+          <label for="n-serie-extintor" class="form-label">Numero de serie</label>
+          <input name="numeroDeSerie" type="text" class="form-control" id="n-serie-extintor" placeholder="Ex. 5036">
+          <div id="n-serie-feedback" class="invalid-feedback">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="a-fabricacao-extintor" class="form-label">Ano de fabricação</label>
+          <input name="anoFabricacao" type="text" class="form-control" id="a-fabricacao-extintor" maxlength="4"
+            placeholder="Ex. 2021">
+          <div id="a-fabricacao-feedback" class="invalid-feedback">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="capacidade-extintor" class="form-label">Capacidade</label>
+          <input name="capacidadeNominal" type="text" class="form-control" id="capacidade-extintor" placeholder="25KG">
+          <div id="capacidade-feedback" class="invalid-feedback">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="classe-extintor" class="form-label">Classe</label>
+          <input name="classeExtintor" type="text" class="form-control" id="classe-extintor" placeholder="ABC">
+          <div id="classe-feedback" class="invalid-feedback">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="agente-extintor" class="form-label">Agente extintor</label>
+          <input name="agenteExtintor" type="text" class="form-control" id="agente-extintor" placeholder="pó quimico">
+          <div id="agente-feedback" class="invalid-feedback">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="recarga-extintor" class="form-label">Venc. recarga</label>
+          <input name="vencRecarga" type="date" class="form-control" id="recarga-extintor" placeholder="">
+          <div id="recarga-feedback" class="invalid-feedback">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="hidroestatico-extintor" class="form-label">Venc. teste hidroestatico</label>
+          <input name="vencTesteHidroestatico" type="date" class="form-control" id="hidroestatico-extintor"
+            placeholder="">
+          <div id="hidroestatico-feedback" class="invalid-feedback">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Fabricante</label>
+          <select name="idFabricante" id="select-fabricante" class="form-select" aria-label="Fabricante">
+            <option selected>Selecione o fabricante</option>
+            {{#each fabricantes}}
+            <option value="{{idFabricante}}">{{nome}}</option>
+            {{/each}}
+          </select>
+          <div id="select-feedback" class="invalid-feedback">
+          </div>
+        </div>
+
+        <button id="btn-submit" type="submit" class="mb-3 btn btn-success btn-lg">Adicionar</button>
+      </form>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+
+  <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+  <script src="https://unpkg.com/imask"></script>
+  <script src="/js/extintor.js"></script>
+</body>
+
+</html>

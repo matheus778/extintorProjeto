@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta lang="pt-br">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | Controle de Extintor</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+  <main class="p-2 border border-dark">
+    {{#with extintor}}
+    <section>
+      <div class="header d-flex justify-content-between">
+        <div>
+          <h1>#{{numeroDeSerie}}</h1>
+          <span>Ano de fabriação: {{anoFabricacao}}</span>
+          <br>
+          <span>Capacidade: {{capacidadeNominal}}</span>
+          <br>
+          <span>Classe: {{classeExtintor}}</span>
+          <br>
+          <span>Agente Extintor: {{agenteExtintor}}</span>
+          <br>
+          <span>Vencimento recarga: {{vencRecarga}}</span>
+          <br>
+          <span>Vencimento teste hidroestatico: {{vencTesteHidroestatico}}</span>
+        </div>
+        {{/with}}
+
+        <div class="classe d-flex align-items-start pt-2" style="gap: 10px;">
+          {{#if classeExtintor.a}}
+          <div style="width: 50px; height: 50px;"
+            class="bg-success d-flex justify-content-center align-items-center text-white text-bold fs-1">
+            A
+          </div>
+          {{/if}}
+
+          {{#if classeExtintor.b}}
+          <div style="width: 50px; height: 50px;"
+            class="bg-danger d-flex justify-content-center align-items-center text-white text-bold fs-1">
+            B
+          </div>
+          {{/if}}
+
+          {{#if classeExtintor.c}}
+          <div style="width: 50px; height: 50px;"
+            class="bg-primary d-flex justify-content-center align-items-center text-white text-bold fs-1">
+            C
+          </div>
+          {{/if}}
+        </div>
+      </div>
+      <hr>
+
+      <h4>Fabricante</h4>
+      {{#with fabricante}}
+      <span>Nome (razão social): {{nome}}</span>
+      <br>
+      <span>Tel: {{telefone}}</span>
+      <br>
+      <span>Email: {{email}}</span>
+      <br>
+      <span>Endereço: {{endereco}}</span>
+      <br>
+      <br>
+      {{/with}}
+
+      <div class="etiqueta-de-inspeção d-flex align-items-center" style="gap: 40px">
+        <table class="table table-bordered border-dark caption-top" style="max-width: 500px;">
+          <caption class="text-center"><strong>CONTROLE DE INSPEÇÃO</strong></caption>
+          <thead>
+            <tr>
+              <th scope="col">Mês</th>
+              <th scope="col">Data</th>
+              <th scope="col">Visto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">JAN</th>
+              <td>{{vistoria.janeiro}}</td>
+              <td>
+                {{#if vistoria.janeiro}}
+                X
+                {{/if}}
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">FEV</th>
+              <td>{{vistoria.fevereiro}}</td>
+              <td>
+                {{#if vistoria.fevereiro}}
+                X
+                {{/if}}
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">MAR</th>
+              <td>{{vistoria.marco}}</td>
+              <td>
+                {{#if vistoria.marco}}
+                X
+                {{/if}}
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">ABR</th>
+              <td>{{vistoria.abril}}</td>
+              <td>
+                {{#if vistoria.abril}}
+                X
+                {{/if}}
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">MAI</th>
+              <td>{{vistoria.maio}}</td>
+              <td>
+                {{#if vistoria.maio}}
+                X
+                {{/if}}
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">JUN</th>
+              <td>{{vistoria.junho}}</td>
+              <td>
+                {{#if vistoria.junho}}
+                X
+                {{/if}}
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">JUL</th>
+              <td>{{vistoria.julho}}</td>
+              <td>
+                {{#if vistoria.julho}}
+                X
+                {{/if}}
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">AGO</th>
+              <td>{{vistoria.agosto}}</td>
+              <td>
+                {{#if vistoria.agosto}}
+                X
+                {{/if}}
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">SET</th>
+              <td>{{vistoria.setembro}}</td>
+              <td>
+                {{#if vistoria.setembro}}
+                X
+                {{/if}}
+                </td>
+            </tr>
+            <tr>
+              <th scope="row">OUT</th>
+              <td>{{vistoria.outubro}}</td>
+              <td>
+                {{#if vistoria.outubro}}
+                X
+                {{/if}}
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">NOV</th>
+              <td>{{vistoria.novembro}}</td>
+              <td>
+                {{#if vistoria.novembro}}
+                X
+                {{/if}}
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">DEZ</th>
+              <td>{{vistoria.dezembro}}</td>
+              <td>
+                {{#if vistoria.dezembro}}
+                X
+                {{/if}}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="info-manutenção bg-warning p-2" style="max-width: 300px;">
+          <h4>Manutenção</h4>
+          <p style="font-size: 15px;">
+            1 - inspecionar o extintor a cada periodo de 12 meses NBR 12962 e regulamento tecnico da
+            qualidade / INMETRO. e vistoria-lo a cada periodo de 5 anos NBR 12962 e relgulamento tecnico da
+            qualidade / INMETRO. <br>
+            2 - O ponteiro do indicador de pressão estando na faixa vermelha, levar imediatamente a uma empresa
+            registrada pelo INMETRO. <br>
+            3 - Recarregar, quando aplicavel, imediatamente apos o uso ou ao termino da garantia. <br>
+            4 - Extintores de incêndio são indicados para eliminar principios de incêndio, sendo necessario inspeção no
+            minimo mensalmente.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

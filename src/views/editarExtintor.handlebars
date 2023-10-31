@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta lang="pt-br">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editar Extintor | Controle de Extintor</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+  <main>
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Editar extintor</a>
+
+      </div>
+    </nav>
+
+    <section class="container ">
+      {{#with extintor}}
+      <form name="formulario-extintor" method="post" action="/extintor/update/{{idExtintor}}">
+        <div class="mb-3">
+          <label for="n-serie-exintor" class="form-label">Numero de serie</label>
+          <input value="{{numeroDeSerie}}" id="n-serie-extintor" name="numeroDeSerie" type="text" class="form-control"
+            placeholder="4512">
+          <div id="n-serie-feedback" class="invalid-feedback">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="a-fabricacao-extintor" class="form-label">Ano de fabricação</label>
+          <input value="{{anoFabricacao}}" name="anoFabricacao" type="text" class="form-control"
+            id="a-fabricacao-extintor" maxlength="4" placeholder="2021">
+          <div id="a-fabricacao-feedback" class="invalid-feedback">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Capacidade</label>
+          <input value="{{capacidadeNominal}}" name="capacidadeNominal" type="text" class="form-control"
+            id="capacidade-extintor" placeholder="25kg">
+          <div id="capacidade-feedback" class="invalid-feedback">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Classe</label>
+          <input value="{{classeExtintor}}" name="classeExtintor" type="text" class="form-control" id="classe-extintor"
+            placeholder="ABC">
+          <div id="classe-feedback" class="invalid-feedback">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Agente extintor</label>
+          <input value="{{agenteExtintor}}" name="agenteExtintor" type="text" class="form-control" id="agente-extintor"
+            placeholder="pó quimico">
+          <div id="agente-feedback" class="invalid-feedback">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Venc. recarga</label>
+          <input value="{{vencRecarga}}" name="vencRecarga" type="date" class="form-control" id="recarga-extintor"
+            placeholder="">
+          <div id="recarga-feedback" class="invalid-feedback">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Venc. teste hidroestatico</label>
+          <input value="{{vencTesteHidroestatico}}" name="vencTesteHidroestatico" type="date" class="form-control"
+            id="hidroestatico-extintor" placeholder="">
+          <div id="hidroestatico-feedback" class="invalid-feedback">
+          </div>
+        </div>
+        {{/with}}
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Fabricante</label>
+          <select name="idFabricante" id="select-fabricante" class="form-select" aria-label="Fabricante">
+            <option value="{{fabricanteSelecionado.idFabricante}}" selected>{{fabricanteSelecionado.nome}}</option>
+            {{#each fabricantes}}
+            <option value="{{idFabricante}}">{{nome}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <button type="submit" class="btn btn-success d-flex align-items-center gap-2 mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-floppy2-fill"
+            viewBox="0 0 16 16">
+            <path d="M12 2h-2v3h2V2Z"></path>
+            <path
+              d="M1.5 0A1.5 1.5 0 0 0 0 1.5v13A1.5 1.5 0 0 0 1.5 16h13a1.5 1.5 0 0 0 1.5-1.5V2.914a1.5 1.5 0 0 0-.44-1.06L14.147.439A1.5 1.5 0 0 0 13.086 0H1.5ZM4 6a1 1 0 0 1-1-1V1h10v4a1 1 0 0 1-1 1H4ZM3 9h10a1 1 0 0 1 1 1v5H2v-5a1 1 0 0 1 1-1Z">
+            </path>
+          </svg>
+          Salvar edição
+        </button>
+      </form>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+  <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+  <script src="https://unpkg.com/imask">
+    IMask(aFabricacao, {
+      mask: '0000'
+    })
+  </script>
+  <script src="/js/extintor.js"></script>
+</body>
+
+</html>

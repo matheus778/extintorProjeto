@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta lang="pt-br">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adicionar Fabricante | Controle de Extintor</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+  <main>
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Adicionar novo fabricante</a>
+
+      </div>
+    </nav>
+
+    <section class="container ">
+      <form method="post" name="formulario-fabricante" action="/fabricante/store">
+        <div class="mb-3 has-validation">
+          <label for="exampleFormControlInput1" class="form-label">Nome</label>
+          <input name="nome" type="text" class="form-control" id="nome-fabricante" placeholder="nome do fabricante">
+          <div id="nome-feedback" class="invalid-feedback">
+
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Telefone</label>
+          <input name="telefone" type="text" class="form-control" id="telefone-fabricante" placeholder="(97) 4444-3333">
+          <div id="telefone-feedback" class="invalid-feedback">
+
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Email</label>
+          <input name="email" type="email" class="form-control" id="email-fabricante" placeholder="exmaple@example.com">
+          <div id="email-feedback" class="invalid-feedback">
+
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Endereço</label>
+          <input name="endereco" type="text" class="form-control" id="endereco-fabricante"
+            placeholder="Rua. XXXX , N° 456">
+          <div id="endereco-feedback" class="invalid-feedback">
+
+          </div>
+        </div>
+
+        <button id="btn-adicionar-fabricante" type="submit" class="mb-3 btn btn-success btn-lg">Adicionar</button>
+      </form>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+  <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+  <script src="https://unpkg.com/imask"></script>
+  <script src="/js/fabricante.js"></script>
+</body>
+
+</html>
