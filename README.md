@@ -1,8 +1,8 @@
 # extintorProjeto
 projeto simples de controle de extintores predial, nesse sistema você podera cadastrar seus extintores e realizar uma vistoria mensal, é possivel exibir uma ficha do extintor contendo todos os dados referente a ele e as datas das vistorias.
 
-![image](https://github.com/matheus778/extintorProjeto/assets/57428641/ccf528c7-6e63-4064-9371-64f82cf18239)
-![image](https://github.com/matheus778/extintorProjeto/assets/57428641/895bf5d8-b691-4777-8b10-0381e43b4b9f)
-![image](https://github.com/matheus778/extintorProjeto/assets/57428641/9f1eff32-1f7a-436f-a69f-6aae44b0e142)
-![image](https://github.com/matheus778/extintorProjeto/assets/57428641/0eedae51-cf2e-4021-bbd2-7e9c9680d8ed)
-![image](https://github.com/matheus778/extintorProjeto/assets/57428641/a9994756-829b-4440-a3cf-30f90af387b9)
+![image](https://github.com/matheus778/extintorProjeto/assets/57428641/6b8e8683-b01f-4985-82eb-cb07dbf56159)
+![image](https://github.com/matheus778/extintorProjeto/assets/57428641/c6126de7-d6d4-4415-bafa-1aa488e5f9ac)
+![image](https://github.com/matheus778/extintorProjeto/assets/57428641/9d5f9542-cae5-4078-8732-6963fa3b9da6)
+![image](https://github.com/matheus778/extintorProjeto/assets/57428641/06bce425-1c73-4585-84d9-b264cd030625)
+![image](https://github.com/matheus778/extintorProjeto/assets/57428641/e2cda6c2-ac84-42ae-a8c2-ad11922f89e4)
